@@ -599,7 +599,7 @@ export async function uploadToS3(data: string, contentType: string): Promise<str
           Bucket: getS3BucketName(),
           Key: s3Path,
           ContentType: contentType,
-          ACL: 'public-read',
+          ACL: 'private',
           Body: Buffer.from(data, 'base64'),
         })
         .promise()
